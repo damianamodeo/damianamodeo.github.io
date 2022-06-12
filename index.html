@@ -4,13 +4,31 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="src/js/dexie.js"></script>
+  <!--
+    <script src="src/js/dexie.js.map"></script>
+  -->
   <title>Orderly</title>
 </head>
 <body>
   <div>
-    <h1>
-      This is Damian's Website it really is
-    </h1>
+    <form onsubmit="testFunction(event)">
+      <label for="submit">This is a submity button</label>
+      <input type="submit" name="SUBMMIT" id="submit">
+    </form>
   </div>
+  <div>
+    <form onsubmit="deleteDatabase(event)">
+      <label for="submit">Delete Database</label>
+      <input type="submit" name="SUBMMIT" id="submit">
+    </form>
+  </div>
+  <div>
+    <form onsubmit="createDatabase(event)">
+      <label for="create-database">Create Database</label>
+      <input type="submit" name="create-database" id="create-database">
+    </form>
+  </div>
+  <script src="src/js/db.js"></script>
 </body>
 </html>
