@@ -12,22 +12,28 @@
 </head>
 <body>
   <div>
-    <form onsubmit="testFunction(event)">
-      <label for="submit">This is a submity button</label>
-      <input type="submit" name="SUBMMIT" id="submit">
-    </form>
-  </div>
-  <div>
     <form onsubmit="deleteDatabase(event)">
       <label for="submit">Delete Database</label>
-      <input type="submit" name="SUBMMIT" id="submit">
+      <input type="submit" name="SUBMIT" id="submit">
     </form>
   </div>
+  <br>
   <div>
-    <form onsubmit="createDatabase(event)">
-      <label for="create-database">Create Database</label>
-      <input type="submit" name="create-database" id="create-database">
+    <form id="new-pub-form" action="#" method="post">
+      <label for="new-pub-surname">Surname</label>
+      <input type="text" id="new-pub-surname">
+      <br>
+      <label for="new-pub-firstname">First Name</label>
+      <input type="text" id="new-pub-firstname">
+      <br>
+      <br>
+      <button id="reset-new-pub">Reset</button>
+      <button id="submit-new-pub">Submit</button>
     </form>
+  </div>
+  <br>
+  <div>
+    <ul id="pub-list"></ul>
   </div>
   <script src="src/js/db.js"></script>
 </body>
