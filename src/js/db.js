@@ -1,38 +1,62 @@
 var db = new Dexie("Congregation");
 db.version(1).stores({
-    publishers: "++id, surname, firstname, othername, birthdate, age, *tags",
+    publishers: "++id, firstname, middlename, surname, othername, datebirth, datebaptism, phonemobile, phonehome, emailtheocratic, emailpersonal, *tags",
 });
 
 const init = function(){
-  document.getElementById("reset-new-pub").addEventListener('click', resetNewPub);
-  document.getElementById("submit-new-pub").addEventListener('click', submitNewPub);
+  document.querySelector("#reset-new-pub").addEventListener('click', resetNewPub);
+  document.querySelector("#submit-new-pub").addEventListener('click', submitNewPub);
   createPublisherList()
 }
 
 const resetNewPub = function(event){ 
   event.preventDefault();
-  document.getElementById("new-pub-form").reset();
+  document.querySelector("#new-pub-form").reset();
 }
 
 const submitNewPub = function(event){
   event.preventDefault();
-  var fn = document.getElementById('new-pub-firstname').value;
-  var sn = document.getElementById('new-pub-surname').value;
-  if (fn == '' || sn == '') {
+  var nameFirst = document.querySelector('#new-pub-firstname').value;
+  var nameMiddle = document.querySelector('#new-pub-middlename').value;
+  var nameLast= document.querySelector('#new-pub-surname').value;
+  var nameOther = document.querySelector('#new-pub-othername').value;
+  var dateBirth = document.querySelector('#new-pub-date-birth').value;
+  var dateBaptism = document.querySelector('#new-pub-date-baptism').value;
+  var phoneMobile = document.querySelector('#new-pub-phone-mobile').value;
+  var phoneHome = document.querySelector('#new-pub-phone-home').value;
+  var emailTheocratic = document.querySelector('#new-pub-email-theocratic').value;
+  var emailPersonal = document.querySelector('#new-pub-email-personal').value;
+  if (nameFirst == '' || nameLast == '') {
     alert("hello")
   }else{
     db.publishers.add({
-      firstname: fn,
-      surname: sn
+      firstname: nameFirst, 
+      middlename: nameMiddle, 
+      surname: nameLast, 
+      othername: nameOther, 
+      datebirth: dateBirth, 
+      datebaptism: dateBaptism, 
+      phonemobile: phoneMobile, 
+      phonehome: phoneHome, 
+      emailtheocratic: emailTheocratic, 
+      emailpersonal: emailPersonal
     });
-    document.getElementById("new-pub-form").reset();
+    document.querySelector("#new-pub-form").reset();
     removePublisherList();
     createPublisherList();
   }
 }
 
-const validate = function(){
-
+const saveAsPublishers = function(){
+  file = window.showSaveFilePicker({
+    suggestedName: "publishers.ord",
+    types: [{
+      description: 'Orderly file',
+      accept: {'application/ord': ['.ord']},
+    }]
+  });
+  file.write(JSON.stringify(db.publishers));
+  file.close();
 }
 
 function testFunction(event){
@@ -76,4 +100,3 @@ const createPublisherList = function(){
 }
 
 document.addEventListener('DOMContentLoaded', init)
-
