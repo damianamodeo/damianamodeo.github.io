@@ -48,16 +48,66 @@ const submitNewPub = function(event){
 }
 
 const saveAsPublishers = function(){
-  file = window.showSaveFilePicker({
-    suggestedName: "publishers.ord",
-    types: [{
-      description: 'Orderly file',
-      accept: {'application/ord': ['.ord']},
-    }]
-  });
-  file.write(JSON.stringify(db.publishers));
-  file.close();
+
+  fileHandle = window.showSaveFilePicker();
+  let stream = fileHandle.createWritable();
+  stream.write("hello");
+  stream.close();
+  
 }
+
+
+// db.open().then(function() {
+//     const idbDatabase = db.backendDB(); // get native IDBDatabase object from Dexie wrapper
+  
+//     // export to JSON, clear database, and import from JSON
+//     exportToJsonString(idbDatabase, function(err, jsonString) {
+//       if (err) {
+//         console.error(err);
+//       } else {
+
+
+
+//         var today = new Date();
+//         var dd = String(today.getDate()).padStart(2, '0');
+//         var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+//         var yyyy = today.getFullYear();
+        
+//         today = mm + '/' + dd + '/' + yyyy;
+        
+//         // fileHandle = window.showSaveFilePicker({
+//         //   suggestedName: "publishers " + yyyy + '-' + mm + '-' + dd + ".ord",
+//         //   types: [{
+//         //     description: 'Orderly file',
+//         //     accept: {'application/ord': ['.ord']},
+//         //   }]
+//         // });
+//         fileHandle = window.showSaveFilePicker();
+//         fileData = fileHandle.createWritable();
+//         fileData.write(jsonString);
+//         fileData.close();
+
+
+
+//         console.log('Exported as JSON: ' + jsonString);
+//         clearDatabase(idbDatabase, function(err) {
+//           if (!err) { // cleared data successfully
+//             importFromJsonString(idbDatabase, jsonString, function(err) {
+//               if (!err) {
+//                 console.log('Imported data successfully');
+//               }
+//             });
+//           }
+//         });
+//       }
+//     });
+//   }).catch(function(e) {
+//     console.error('Could not connect. ' + e);
+//   });
+  
+
+
+// }
 
 function testFunction(event){
   event.preventDefault(); 
