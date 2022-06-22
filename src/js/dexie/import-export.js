@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 /**
  * Export all data from an IndexedDB database
@@ -7,16 +7,14 @@
  */
 function exportToJsonString(idbDatabase, cb) {
   const exportObject = {};
-  const objectStoreNamesSet = new Set(idbDatabase.objectStoreNames);
+  //   const objectStoreNamesSet = new Set(idbDatabase.objectStoreNames);
+  const objectStoreNamesSet = ["publishers"];
   const size = objectStoreNamesSet.size;
   if (size === 0) {
     cb(null, JSON.stringify(exportObject));
   } else {
     const objectStoreNames = Array.from(objectStoreNamesSet);
-    const transaction = idbDatabase.transaction(
-        objectStoreNames,
-        'readonly'
-    );
+    const transaction = idbDatabase.transaction(objectStoreNames, "readonly");
     transaction.onerror = (event) => cb(event, null);
 
     objectStoreNames.forEach((storeName) => {
@@ -28,10 +26,7 @@ function exportToJsonString(idbDatabase, cb) {
           cursor.continue();
         } else {
           exportObject[storeName] = allObjects;
-          if (
-            objectStoreNames.length ===
-            Object.keys(exportObject).length
-          ) {
+          if (objectStoreNames.length === Object.keys(exportObject).length) {
             cb(null, JSON.stringify(exportObject));
           }
         }
@@ -58,16 +53,13 @@ function importFromJsonString(idbDatabase, jsonString, cb) {
     cb(null);
   } else {
     const objectStoreNames = Array.from(objectStoreNamesSet);
-    const transaction = idbDatabase.transaction(
-        objectStoreNames,
-        'readwrite'
-    );
+    const transaction = idbDatabase.transaction(objectStoreNames, "readwrite");
     transaction.onerror = (event) => cb(event);
 
     const importObject = JSON.parse(jsonString);
 
     // Delete keys present in JSON that are not present in database
-    Object.keys(importObject).forEach((storeName)=> {
+    Object.keys(importObject).forEach((storeName) => {
       if (!objectStoreNames.includes(storeName)) {
         delete importObject[storeName];
       }
@@ -130,14 +122,11 @@ function clearDatabase(idbDatabase, cb) {
     cb(null);
   } else {
     const objectStoreNames = Array.from(objectStoreNamesSet);
-    const transaction = idbDatabase.transaction(
-        objectStoreNames,
-        'readwrite'
-    );
+    const transaction = idbDatabase.transaction(objectStoreNames, "readwrite");
     transaction.onerror = (event) => cb(event);
 
     let count = 0;
-    objectStoreNames.forEach(function(storeName) {
+    objectStoreNames.forEach(function (storeName) {
       transaction.objectStore(storeName).clear().onsuccess = () => {
         count++;
         if (count === size) {
@@ -149,7 +138,7 @@ function clearDatabase(idbDatabase, cb) {
   }
 }
 
-if (typeof module !== 'undefined' && module.exports) {
+if (typeof module !== "undefined" && module.exports) {
   // We are running on Node.js so need to export the module
   module.exports = {
     exportToJsonString: exportToJsonString,
