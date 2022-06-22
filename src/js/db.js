@@ -97,6 +97,6 @@ const createPublisherList = function(){
     i = i+1;
   })
 
-}
+} 
 
 document.addEventListener('DOMContentLoaded', init)
