@@ -5,7 +5,6 @@ db.version(2).stores({
   clam: "week, chaiman, talk",
 });
 
-
 // db.clam.bulkAdd([
 //   {week: "Foo", chaiman: 'Damian'},
 //   {week: "Bar", chaiman: 'Ben'}
@@ -62,61 +61,46 @@ const submitNewPub = function (event) {
 };
 
 const saveAsPublishers = function () {
-  // }
-
-  // fileHandle = window.showSaveFilePicker();
-  // let stream = fileHandle.createWritable();
-  // stream.write("hello");
-  // stream.close();
-
   db.open()
     .then(function () {
       const idbDatabase = db.backendDB(); // get native IDBDatabase object from Dexie wrapper
-
       // export to JSON, clear database, and import from JSON
-      exportToJsonString(idbDatabase, function (err, jsonString) {
+      exportToJsonString(idbDatabase, "publishers", function (err, jsonString) {
         if (err) {
           console.error(err);
         } else {
           var today = new Date();
-          var dd = String(today.getDate()).padStart(2, '0');
-          var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+          var dd = String(today.getDate()).padStart(2, "0");
+          var mm = String(today.getMonth() + 1).padStart(2, "0"); //January is 0!
           var yyyy = today.getFullYear();
-
-          today = mm + '/' + dd + '/' + yyyy;
-
-
-
           const data = jsonString;
           const blob = new Blob([data], { "application/json": [".json"] });
           const href = URL.createObjectURL(blob);
           const a = Object.assign(document.createElement("a"), {
             href,
             style: "display:none",
-            download: "myData.txt",
+            download: "publishers " + yyyy + "-" + mm + "-" + dd + ".ord",
           });
           document.body.appendChild(a);
           a.click();
           URL.revokeObjectURL(href);
           a.remove();
-
-          console.log("Exported as JSON: " + jsonString);
-          clearDatabase(idbDatabase, function (err) {
-            if (!err) {
-              // cleared data successfully
-              importFromJsonString(idbDatabase, jsonString, function (err) {
-                if (!err) {
-                  console.log("Imported data successfully");
-                }
-              });
-            }
-          });
         }
       });
     })
     .catch(function (e) {
       console.error("Could not connect. " + e);
     });
+};
+
+const importPublishers = function () {
+  var file = document.querySelector("#import-publishers").files[0];
+  var reader = new FileReader();
+  reader.onloadend = function () {
+    clearDatabase(db.backendDB(), "publishers");
+    importFromJsonString(db.backendDB(), reader.result, function (err) {});
+  };
+  reader.readAsText(file);
 };
 
 function testFunction(event) {

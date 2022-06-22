@@ -5,10 +5,10 @@
  * @param {IDBDatabase} idbDatabase - to export from
  * @param {function(Object?, string?)} cb - callback with signature (error, jsonString)
  */
-function exportToJsonString(idbDatabase, cb) {
+function exportToJsonString(idbDatabase, store, cb) {
   const exportObject = {};
-  //   const objectStoreNamesSet = new Set(idbDatabase.objectStoreNames);
-  const objectStoreNamesSet = ["publishers"];
+    // const objectStoreNamesSet = new Set(idbDatabase.objectStoreNames);
+  const objectStoreNamesSet = [store];
   const size = objectStoreNamesSet.size;
   if (size === 0) {
     cb(null, JSON.stringify(exportObject));
@@ -54,7 +54,7 @@ function importFromJsonString(idbDatabase, jsonString, cb) {
   } else {
     const objectStoreNames = Array.from(objectStoreNamesSet);
     const transaction = idbDatabase.transaction(objectStoreNames, "readwrite");
-    transaction.onerror = (event) => cb(event);
+    transaction.onerror = (event) => alert('cb(event)');
 
     const importObject = JSON.parse(jsonString);
 
@@ -115,8 +115,9 @@ function importFromJsonString(idbDatabase, jsonString, cb) {
  * @param {function(Object)} cb - callback with signature (error), where error is null on success
  * @return {void}
  */
-function clearDatabase(idbDatabase, cb) {
-  const objectStoreNamesSet = new Set(idbDatabase.objectStoreNames);
+function clearDatabase(idbDatabase, store, cb) {
+//   const objectStoreNamesSet = new Set(idbDatabase.objectStoreNames);
+  const objectStoreNamesSet = [store];
   const size = objectStoreNamesSet.size;
   if (size === 0) {
     cb(null);
