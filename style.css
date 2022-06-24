@@ -1,12 +1,19 @@
+:root {
+
+}
+
 html {
     height: 100%;
     background: burlywood;
   }
   
   body {
+    font-family: 'Roboto', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 1.3125rem;
+    line-height: 1.6;
     display: flex;
     justify-content: center;
-    padding: 1em;
+    padding: 1rem;
   }
   
   input {
@@ -14,16 +21,15 @@ html {
     justify-content: center;
   }
   
+  ul {
+  }
+  
   img {
     display: block;
     width: 100%;
   }
   
-  .add-button {
-    position: absolute;
-    top: 1px;
-    left: 1px;
-  }
+
   
   @media (orientation: landscape) {
     img {

@@ -72,9 +72,9 @@ const publisherViewScreen = function (pub, id) {
   let btnDelete = document.createElement("button");
   btnDelete.innerText = "Delete";
   btnDelete.addEventListener("click", () => {
-    db.publishers.delete(id)
-    homeScreen()
-});
+    db.publishers.delete(id);
+    homeScreen();
+  });
   home.appendChild(btnDelete);
 
   let btnUpdate = document.createElement("button");
@@ -149,7 +149,8 @@ const submitNewPub = function (event) {
 };
 
 const updatePub = function (pub) {
-  db.publishers.put({id: pub,
+  db.publishers.put({
+    id: pub,
     firstname: firstName.value,
     middlename: middleName.value,
     surname: lastName.value,
@@ -161,12 +162,60 @@ const updatePub = function (pub) {
     emailtheocratic: emailTheocratic.value,
     emailpersonal: emailPersonal.value,
   });
-}
+};
+
+const exportPublishers = function () {
+  db.open()
+    .then(function () {
+      const idbDatabase = db.backendDB(); // get native IDBDatabase object from Dexie wrapper
+      // export to JSON, clear database, and import from JSON
+      exportToJsonString(idbDatabase, "publishers", function (err, jsonString) {
+        if (err) {
+          console.error(err);
+        } else {
+          var today = new Date();
+          var dd = String(today.getDate()).padStart(2, "0");
+          var mm = String(today.getMonth() + 1).padStart(2, "0"); //January is 0!
+          var yyyy = today.getFullYear();
+          const data = jsonString;
+          const blob = new Blob([data], { "application/json": [".json"] });
+          const href = URL.createObjectURL(blob);
+          const a = Object.assign(document.createElement("a"), {
+            href,
+            style: "display:none",
+            download: "publishers " + yyyy + "-" + mm + "-" + dd + ".ord",
+          });
+          document.body.appendChild(a);
+          a.click();
+          URL.revokeObjectURL(href);
+          a.remove();
+        }
+      });
+    })
+    .catch(function (e) {
+      console.error("Could not connect. " + e);
+    });
+};
+
+const importPublishers = function () {
+  var file = document.querySelector("#import-publishers").files[0];
+  var reader = new FileReader();
+  reader.onloadend = function () {
+    clearDatabase(db.backendDB(), "publishers");
+    importFromJsonString(db.backendDB(), reader.result, function (err) {});
+  };
+  reader.readAsText(file);
+};
+
+var db = new Dexie("Congregation");
+db.version(3).stores({
+  publishers:
+    "++id, firstname, middlename, surname, othername, datebirth, datebaptism, phonemobile, phonehome, emailtheocratic, emailpersonal, familyhead, *tags",
+  clam: "week, chaiman, talk",
+});
 
 const home = document.querySelector("#home");
-
 const publisherList = document.createElement("ul");
-
 const publisherView = document.createElement("form");
 
 const firstName = document.createElement("input");
