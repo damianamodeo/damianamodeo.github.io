@@ -1,21 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <title>Orderly</title>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="src/js/dexie/dexie.js"></script>
   <script src="src/js/dexie/import-export.js"></script>
-  <!--
-    <script src="src/js/dexie/dexie.js.map"></script>
-  -->
-  <title>Orderly</title>
-  <link href="style.css" rel="stylesheet">
+  <!-- <script src="src/js/dexie/dexie.js.map"></script> -->
   <script src="index.js" defer></script>
+  <script src="src/js/db.js" defer></script>
   <link rel="manifest" href="manifest.webmanifest">
+  <link href="style.css" rel="stylesheet">
 </head>
 <body>
-  <img src="images/fox1.jpg" alt="a fox picture">
   <button class="add-button">Add to home screen</button>
   <div>
     <form onsubmit="deleteDatabase(event)">
@@ -83,7 +81,6 @@
   <div>
     <ul id="pub-list"></ul>
   </div>
-  <script src="src/js/db.js"></script>
 </body>
 </html>
 
