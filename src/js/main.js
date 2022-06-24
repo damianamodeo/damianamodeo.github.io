@@ -25,7 +25,7 @@ const homeScreen = function () {
   db.publishers.orderBy("surname").each((pub) => {
     let li = document.createElement("li");
     li.addEventListener("click", () => {
-      publisherViewScreen(pub);
+      publisherViewScreen(pub, pub.id);
     });
     li.innerText = pub.surname + ", " + pub.firstname;
     publisherList.appendChild(li);
@@ -33,7 +33,7 @@ const homeScreen = function () {
   });
 };
 
-const publisherViewScreen = function (pub) {
+const publisherViewScreen = function (pub, id) {
   navBar();
 
   firstName.value = pub.firstname;
@@ -71,17 +71,18 @@ const publisherViewScreen = function (pub) {
 
   let btnDelete = document.createElement("button");
   btnDelete.innerText = "Delete";
-  btnDelete.addEventListener("click", (pub) => {
-    db.publishers.delete(pub.id);
+  btnDelete.addEventListener("click", () => {
+    db.publishers.delete(id)
+    homeScreen()
 });
   home.appendChild(btnDelete);
 
-  let btnSubmit = document.createElement("button");
-  btnSubmit.innerText = "Submit";
-  btnSubmit.addEventListener("click", (event) => {
-    submitNewPub(event);
+  let btnUpdate = document.createElement("button");
+  btnUpdate.innerText = "Update";
+  btnUpdate.addEventListener("click", (event) => {
+    updatePub(id);
   });
-  home.appendChild(btnSubmit);
+  home.appendChild(btnUpdate);
 };
 
 const addPublisherScreen = function () {
@@ -146,6 +147,21 @@ const submitNewPub = function (event) {
     publisherView.reset();
   }
 };
+
+const updatePub = function (pub) {
+  db.publishers.put({id: pub,
+    firstname: firstName.value,
+    middlename: middleName.value,
+    surname: lastName.value,
+    othername: otherName.value,
+    datebirth: dateBirth.value,
+    datebaptism: dateBaptism.value,
+    phonemobile: phoneMobile.value,
+    phonehome: phoneHome.value,
+    emailtheocratic: emailTheocratic.value,
+    emailpersonal: emailPersonal.value,
+  });
+}
 
 const home = document.querySelector("#home");
 
