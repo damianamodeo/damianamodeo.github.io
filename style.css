@@ -6,6 +6,12 @@ html {
   body {
     display: flex;
     justify-content: center;
+    padding: 1em;
+  }
+  
+  input {
+    display: flex;
+    justify-content: center;
   }
   
   img {
