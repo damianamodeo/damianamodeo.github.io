@@ -19,7 +19,7 @@ const navBar = function () {
 
 const homeScreen = function () {
   navBar();
-  publisherList.innerHTML = ''
+  publisherList.innerHTML = "";
   home.appendChild(publisherList);
   let i = 0;
   db.publishers.orderBy("surname").each((pub) => {
@@ -68,6 +68,20 @@ const publisherViewScreen = function (pub) {
   publisherView.appendChild(document.createElement("br"));
   publisherView.appendChild(emailTheocratic);
   publisherView.appendChild(document.createElement("br"));
+
+  let btnDelete = document.createElement("button");
+  btnDelete.innerText = "Delete";
+  btnDelete.addEventListener("click", (pub) => {
+    db.publishers.delete(pub.id);
+});
+  home.appendChild(btnDelete);
+
+  let btnSubmit = document.createElement("button");
+  btnSubmit.innerText = "Submit";
+  btnSubmit.addEventListener("click", (event) => {
+    submitNewPub(event);
+  });
+  home.appendChild(btnSubmit);
 };
 
 const addPublisherScreen = function () {
@@ -95,12 +109,12 @@ const addPublisherScreen = function () {
   publisherView.appendChild(emailTheocratic);
   publisherView.appendChild(document.createElement("br"));
 
-  publisherView.reset()
+  publisherView.reset();
 
   let btnReset = document.createElement("button");
   btnReset.innerText = "Reset";
   btnReset.addEventListener("click", (event) => {
-    publisherView.reset()
+    publisherView.reset();
   });
   home.appendChild(btnReset);
 
