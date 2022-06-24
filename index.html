@@ -10,11 +10,12 @@
   <!-- <script src="src/js/dexie/dexie.js.map"></script> -->
   <script src="index.js" defer></script>
   <script src="src/js/db.js" defer></script>
+  <script src="src/js/main.js" defer></script>
   <link rel="manifest" href="manifest.webmanifest">
   <link href="style.css" rel="stylesheet">
 </head>
 <body>
-  <button class="add-button">Add to home screen</button>
+  <div id="home">
   <div>
     <form onsubmit="deleteDatabase(event)">
       <label for="submit">Delete Database</label>
@@ -25,7 +26,7 @@
   <div>
     <form id="new-pub-form" action="#" method="post">
 
-      <label for="new-pub-firstname">First Name</label>
+      <label for="new-pub-firstname">First Namee</label>
       <input type="text" id="new-pub-firstname">
       <br>
       <br>
@@ -81,6 +82,7 @@
   <div>
     <ul id="pub-list"></ul>
   </div>
+</div>
 </body>
 </html>
 
