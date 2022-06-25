@@ -1,0 +1,16 @@
+{
+  "theme_color": "orange",
+  "background_color": "purple",
+  "description": "Theocratic Software",
+  "display": "fullscreen",
+  "icons": [
+    {
+      "src": "icon/orderly-icon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "short_name": "Orderly",
+  "name": "Orderly",
+  "start_url": "orderly.html"
+}
