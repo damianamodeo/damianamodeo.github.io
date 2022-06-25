@@ -16,8 +16,11 @@ html {
     font-size: 3rem;
   }  
   input {
-    font-size: 3rem;
+    max-width: 90%;
+    font-size: 2.5rem;
+    justify-content: center;
   }
+  
   button {
     color: rgb(255, 255, 255);
     font-size: 3rem;
