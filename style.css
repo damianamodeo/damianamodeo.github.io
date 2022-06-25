@@ -1,21 +1,59 @@
 :root {
-
 }
 
 html {
-    height: 100%;
-    background: burlywood;
-  }
-  
+  font-family: "Noto-Sans", "Roboto", "Trebuchet MS", "Lucida Sans Unicode",
+    "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+  font-size: 62.5%;
+  background: rgb(241, 221, 194);
+  display: flex;
+  justify-content: center;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
   body {
-    font-family: 'Roboto', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: 1.3125rem;
-    line-height: 1.6;
-    display: flex;
-    justify-content: center;
-    padding: 1rem;
+    font-size: 3rem;
   }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  body {
+    font-size: 1rem;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  body {
+    font-size: 1.2rem;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  body {
+    font-size: 1.4rem;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  body {
+    font-size: 1.6rem;
+  }
+}
+
+/*
+body {
+  font-size: 1.6rem;
+  line-height: 1.6;
+  padding: 1rem;
+}
   
+
+
   input {
     display: flex;
     justify-content: center;
@@ -37,3 +75,4 @@ html {
       object-fit: cover;
     }
   }
+  */
