@@ -6,7 +6,7 @@ html {
   font-family: "Noto Sans", "Roboto", "Trebuchet MS", "Lucida Sans Unicode",
     "Lucida Grande", "Lucida Sans", Arial, sans-serif;
   font-size: 62.5%;
-  background: rgb(241, 221, 194);
+  background: white;
 }
 
 li {
@@ -27,7 +27,7 @@ button {
   margin: 1rem;
   padding: .3em;
   border-style: solid;
-  border-radius: .1em;
+  border-radius: .05em;
   justify-content: center;
 }
 

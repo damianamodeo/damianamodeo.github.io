@@ -208,9 +208,9 @@ const importPublishers = function () {
 };
 
 var db = new Dexie("Congregation");
-db.version(4).stores({
+db.version(5).stores({
   publishers:
-    "++id, firstname, middlename, surname, othername, datebirth, datebaptism, phonemobile, phonehome, emailtheocratic, emailpersonal, familyhead, pioneer, *tags",
+    "++id, firstname, middlename, surname, othername, datebirth, datebaptism, phonemobile, phonehome, emailtheocratic, emailpersonal, familyhead, family, pioneer, report, *tags",
   clam: "week, chaiman, talk",
 });
 
