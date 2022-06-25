@@ -5,7 +5,7 @@
   "display": "fullscreen",
   "icons": [
     {
-      "src": "icon/orderly-icon.png",
+      "src": "src/icon/orderly-icon.png",
       "sizes": "512x512",
       "type": "image/png"
     }
