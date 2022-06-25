@@ -1,12 +1,37 @@
 :root {
 }
- 
+
+@font-face {
+  font-family: "CustomFont";
+  src: url("../fonts/NotoSans-Regular.woff2")
+      format("woff"),
+}
+
 html {
-  font-family: "NotoSans", "Roboto", "Trebuchet MS", "Lucida Sans Unicode",
+  font-family: "Noto Sans", "Roboto", "Trebuchet MS", "Lucida Sans Unicode",
     "Lucida Grande", "Lucida Sans", Arial, sans-serif;
   font-size: 62.5%;
   background: rgb(241, 221, 194);
-  display: flex;
+}
+
+li {
+  color: rgb(74, 109, 167);
+  list-style: none;
+  justify-content: center;
+}
+
+input {
+}
+
+button {
+  color: rgb(255, 255, 255);
+  font-size: 3rem;
+  background-color: rgb(74, 109, 167);
+  border-color: rgba(18, 18, 18, 0.1);
+  margin: 1rem;
+  padding: .3em;
+  border-style: solid;
+  border-radius: .1em;
   justify-content: center;
 }
 
@@ -14,23 +39,14 @@ html {
 @media only screen and (max-width: 600px) {
   body {
     font-size: 3rem;
-  }  
+  }
+
   input {
     max-width: 90%;
     font-size: 2.5rem;
-    justify-content: center;
   }
   
-  button {
-    color: rgb(255, 255, 255);
-    font-size: 3rem;
-    background-color: rgb(74, 109, 167);
-    border-color: rgba(18, 18, 18, 0.1);
-    margin: 1rem;
-    padding: .3em;
-    border-style: solid;
-    border-radius: .1em;
-  }
+
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */

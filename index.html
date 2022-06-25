@@ -1,31 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <title>Orderly</title>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="src/js/dexie/dexie.js"></script>
-  <script src="src/js/dexie/import-export.js"></script>
-  <!-- <script src="src/js/dexie/dexie.js.map"></script> -->
-  <script src="index.js" defer></script>
-  <script src="src/js/db.js" defer></script>
-  <script src="src/js/main.js" defer></script>
-  <link rel="manifest" href="manifest.webmanifest">
-  <link href="style.css" rel="stylesheet">
-</head>
-<body>
-  <div id="home">
-  <div>
-    <form onsubmit="deleteDatabase(event)">
-      <label for="submit">Delete Database</label>
-      <input type="submit" name="SUBMIT" id="submit">
-    </form>
-  </div>
-  <button onclick="saveAsPublishers()">Save As</button>
-  <input type="file" name="import-publishers" id="import-publishers" accept=".ord" onchange="importPublishers()">v>
-</div>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Damian Amodeo</title>
+    <style>
+      @font-face {
+  font-family: "CustomFont";
+  src: url("/orderly/fonts/NotoSans-Regular.woff2")
+      format("woff"),
+}
+      body {
+        background: rgb(68, 68, 68);
+        font-family: "CustomFont", "Gill Sans", "Gill Sans MT", Calibri,
+          "Trebuchet MS", sans-serif;
+        display: flex;
+        justify-content: center;
+        font-size: 3rem;
+      }
+      a {
+        color: rgb(189, 189, 189);
+        cursor: pointer;
+        text-decoration: none;
+      }
+      a:hover {
+        color: rgb(255, 255, 255);
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="/orderly/orderly.html">Orderly</a>
+  </body>
 </html>
-
-
