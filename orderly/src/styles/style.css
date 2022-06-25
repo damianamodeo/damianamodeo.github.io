@@ -1,11 +1,6 @@
 :root {
 }
 
-@font-face {
-  font-family: "CustomFont";
-  src: url("../fonts/NotoSans-Regular.woff2")
-      format("woff"),
-}
 
 html {
   font-family: "Noto Sans", "Roboto", "Trebuchet MS", "Lucida Sans Unicode",

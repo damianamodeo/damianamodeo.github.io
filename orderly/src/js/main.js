@@ -208,10 +208,34 @@ const importPublishers = function () {
 };
 
 var db = new Dexie("Congregation");
-db.version(3).stores({
+db.version(4).stores({
   publishers:
-    "++id, firstname, middlename, surname, othername, datebirth, datebaptism, phonemobile, phonehome, emailtheocratic, emailpersonal, familyhead, *tags",
-  clam: "week, chaiman, talk",
+    "++id," +
+    "firstname," +
+    "middlename," +
+    "surname," +
+    "othername," +
+    "datebirth," +
+    "datebaptism," +
+    "phonemobile," +
+    "phonehome," +
+    "emailtheocratic," +
+    "emailpersonal," +
+    "familyhead," +
+    "wtreader," +
+    "bsreader," +
+    "pioneer," +
+    "family," +
+    "chairman," +
+    "treasures," +
+    "gems," +
+    "elder-ms," +
+    "photo," +
+    "report," +
+    "*tags",
+  clam: "week," +
+    "chaiman," +
+    "treasures",
 });
 
 const home = document.querySelector("#home");
