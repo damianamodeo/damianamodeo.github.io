@@ -2,7 +2,7 @@
 }
 
 html {
-  font-family: "Noto-Sans", "Roboto", "Trebuchet MS", "Lucida Sans Unicode",
+  font-family: "NotoSans", "Roboto", "Trebuchet MS", "Lucida Sans Unicode",
     "Lucida Grande", "Lucida Sans", Arial, sans-serif;
   font-size: 62.5%;
   background: rgb(241, 221, 194);
@@ -17,6 +17,16 @@ html {
   }  
   input {
     font-size: 3rem;
+  }
+  button {
+    color: rgb(255, 255, 255);
+    font-size: 3rem;
+    background-color: rgb(74, 109, 167);
+    border-color: rgba(18, 18, 18, 0.1);
+    margin: 1rem;
+    padding: .3em;
+    border-style: solid;
+    border-radius: .1em;
   }
 }
 
