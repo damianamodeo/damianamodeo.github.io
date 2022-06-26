@@ -9,17 +9,17 @@ html {
   background: rgb(241, 241, 241);
 }
 
-li {
+/* li {
   color: rgb(74, 109, 167);
   list-style: none;
   justify-content: center;
   margin: 1rem;
-}
+} */
 
 input {
 }
 
-button {
+/* button {
   color: rgb(255, 255, 255);
   font-size: 3rem;
   background-color: rgb(74, 109, 167);
@@ -29,10 +29,10 @@ button {
   border-style: solid;
   border-radius: .05em;
   justify-content: center;
-}
+} */
 
 /* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
+/* @media only screen and (max-width: 600px) {
   body {
     font-size: 3rem;
   }
@@ -43,42 +43,35 @@ button {
   }
   
 
-}
+} */
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {
+/* @media only screen and (min-width: 600px) {
   body {
     font-size: 1rem;
   }
-}
-
-@media only screen and (orientation:landscape) and (min-width: 600px) {
-  body {
-    height: 100vw;
-    transform: rotate(90deg);
-  }
-}
+} */
 
 /* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {
+/* @media only screen and (min-width: 768px) {
   body {
     font-size: 1.2rem;
   }
-}
+} */
 
 /* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {
+/* @media only screen and (min-width: 992px) {
   body {
     font-size: 1.4rem;
   }
-}
+} */
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {
+/* @media only screen and (min-width: 1200px) {
   body {
     font-size: 1.6rem;
   }
-}
+} */
 
 /*
 body {
