@@ -21,6 +21,10 @@
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@48,300,0,-25"
+    />
     <!-- main -->
     <script src="index.js" defer></script>
     <script src="src/js/main.js" defer></script>
@@ -36,7 +40,7 @@
   <body>
     <nav class="navbar">
       <ul class="navbar-nav">
-        <li class="logo">
+        <!-- <li class="logo">
           <a href="#" class="nav-link">
             <span class="link-text logo-text">Orderly</span>
             <svg
@@ -63,41 +67,35 @@
               </g>
             </svg>
           </a>
-        </li>
+        </li> -->
 
         <li class="nav-item" onclick="navBar()">
           <a href="#" class="nav-link">
-            <i class="material-icons nav__icon">dashboard</i>
+            <i class="material-symbols-sharp navbar-icon"> dashboard </i>
             <span class="link-text">Dashboard</span>
           </a>
         </li>
 
         <li class="nav-item" onclick="homeScreen()">
           <a href="#" class="nav-link">
-            <i class="material-icons"> people </i>
+            <i class="material-symbols-sharp navbar-icon"> person </i>
             <span class="link-text">Publishers</span>
           </a>
         </li>
 
         <li class="nav-item">
           <a href="#" class="nav-link">
-            <i class="material-icons">
-              event_note
-              </i>
+            <i class="material-symbols-sharp navbar-icon"> event_note </i>
             <span class="link-text">Schedules</span>
           </a>
         </li>
 
         <li class="nav-item">
           <a href="#" class="nav-link">
-            <span class="material-icons">
-              settings
-              </span>
+            <i class="material-symbols-sharp navbar-icon"> settings </i>
             <span class="link-text">Settings</span>
           </a>
         </li>
-
-
       </ul>
     </nav>
     <div id="home"></div>

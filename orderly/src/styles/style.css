@@ -6,7 +6,7 @@ html {
   font-family: "Noto Sans", "Roboto", "Trebuchet MS", "Lucida Sans Unicode",
     "Lucida Grande", "Lucida Sans", Arial, sans-serif;
   font-size: 62.5%;
-  background: white;
+  background: rgb(241, 241, 241);
 }
 
 li {
@@ -49,6 +49,13 @@ button {
 @media only screen and (min-width: 600px) {
   body {
     font-size: 1rem;
+  }
+}
+
+@media only screen and (orientation:landscape) and (min-width: 600px) {
+  body {
+    height: 100vw;
+    transform: rotate(90deg);
   }
 }
 
