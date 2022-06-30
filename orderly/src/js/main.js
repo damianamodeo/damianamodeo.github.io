@@ -214,20 +214,25 @@ db.version(5).stores({
   clam: "week, chaiman, talk",
 });
 
-const home = document.querySelector("#home");
-const publisherList = document.createElement("ul");
-const publisherView = document.createElement("form");
+const header = document.querySelector("header");
+const main = document.querySelector("main");
 
-const firstName = document.createElement("input");
-const middleName = document.createElement("input");
-const lastName = document.createElement("input");
-const otherName = document.createElement("input");
-const dateBirth = document.createElement("input");
-const dateBaptism = document.createElement("input");
-const phoneMobile = document.createElement("input");
-const phoneHome = document.createElement("input");
-const emailPersonal = document.createElement("input");
-const emailTheocratic = document.createElement("input");
+const publisherList = document.createElement("div");
+
+// const home = document.querySelector("#home");
+
+const publisherDetails = document.createElement("form");
+
+const firstName = document.createElement("div");
+const middleName = document.createElement("div");
+const lastName = document.createElement("div");
+const otherName = document.createElement("div");
+const dateBirth = document.createElement("div");
+const dateBaptism = document.createElement("div");
+const phoneMobile = document.createElement("div");
+const phoneHome = document.createElement("div");
+const emailPersonal = document.createElement("div");
+const emailTheocratic = document.createElement("div");
 
 dateBirth.type = "date";
 dateBaptism.type = "date";
@@ -236,4 +241,4 @@ phoneHome.type = "tel";
 emailPersonal.type = "email";
 emailTheocratic.type = "email";
 
-homeScreen();
+publishers();
