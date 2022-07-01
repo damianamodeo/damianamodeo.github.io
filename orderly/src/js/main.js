@@ -86,8 +86,6 @@ const publisherViewScreen = function (pub, id) {
 };
 
 const addPublisherScreen = function () {
-  navBar();
-
   home.appendChild(publisherView);
   publisherView.appendChild(firstName);
   publisherView.appendChild(document.createElement("br"));
@@ -214,31 +212,68 @@ db.version(5).stores({
   clam: "week, chaiman, talk",
 });
 
-const header = document.querySelector("header");
-const main = document.querySelector("main");
+// const header = document.querySelector("#header-container");
+// const main = document.querySelector("main");
+
+// const title =  document.createElement('div')
+// title.className = 'title'
+// title.innerText = ''
+
+// const addPublisher = document.createElement("div");
+// addPublisher.innerHTML = '<i class="material-symbols-sharp nav-icon"> add </i>'
+// addPublisher.addEventListener("click", () => {
+//   addPublisherScreen();
+// });
+
+// const publisherList = document.createElement("div");
+
+// // const home = document.querySelector("#home");
+
+// const publisherDetails = document.createElement("form");
+
+// const firstName = document.createElement("div");
+// firstName.className = 'card-details'
+// const middleName = document.createElement("div");
+// middleName.className = 'card-details'
+// const lastName = document.createElement("div");
+// lastName.className = 'card-details'
+// const otherName = document.createElement("div");
+// otherName.className = 'card-details'
+// const dateBirth = document.createElement("div");
+// dateBirth.className = 'card-details'
+// const dateBaptism = document.createElement("div");
+// dateBaptism.className = 'card-details'
+// const phoneMobile = document.createElement("div");
+// phoneMobile.className = 'card-details'
+// const phoneHome = document.createElement("div");
+// phoneHome.className = 'card-details'
+// const emailPersonal = document.createElement("div");
+// emailPersonal.className = 'card-details'
+// const emailTheocratic = document.createElement("div");
+// emailTheocratic.className = 'card-details'
+
+
+
+// dateBirth.type = "date";
+// dateBaptism.type = "date";
+// phoneMobile.type = "tel";
+// phoneHome.type = "tel";
+// emailPersonal.type = "email";
+// emailTheocratic.type = "email";
+
+
+const header = document.querySelector('header')
+const headerContainer = document.querySelector('.header-container')
+const headerLeft = document.querySelector('.header-left')
+const title = document.querySelector('.title')
+const headerRightContainer = document.querySelector('.header-right-container')
+const headerRight_1 = document.querySelector('.header-right-1')
+
+const main = document.querySelector('main')
 
 const publisherList = document.createElement("div");
 
-// const home = document.querySelector("#home");
 
-const publisherDetails = document.createElement("form");
 
-const firstName = document.createElement("div");
-const middleName = document.createElement("div");
-const lastName = document.createElement("div");
-const otherName = document.createElement("div");
-const dateBirth = document.createElement("div");
-const dateBaptism = document.createElement("div");
-const phoneMobile = document.createElement("div");
-const phoneHome = document.createElement("div");
-const emailPersonal = document.createElement("div");
-const emailTheocratic = document.createElement("div");
 
-dateBirth.type = "date";
-dateBaptism.type = "date";
-phoneMobile.type = "tel";
-phoneHome.type = "tel";
-emailPersonal.type = "email";
-emailTheocratic.type = "email";
-
-publishers();
+dashboard();

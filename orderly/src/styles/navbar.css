@@ -1,5 +1,4 @@
 .navbar {
-  /* background-color: rgb(218, 218, 218); */
   background-color: var(--grey2);
   position: fixed;
   left: 0vh;
@@ -36,7 +35,7 @@
 }
 
 /*****************************
-  Phone Screen
+  Extra small devices (phones, 600px and down)
 *****************************/
 
 @media only screen and (max-width: 600px) {
@@ -45,7 +44,6 @@
     margin-left: 0rem;
   }
 
-  
   header {
     left: 0rem;
   }
@@ -72,7 +70,23 @@
 }
 
 /*****************************
-  Desktop
+  Extra small devices (phones, 600px and down)
+*****************************/
+
+/*****************************
+  Small devices (portrait tablets and large phones, 600px and up)
+*****************************/
+
+/*****************************
+ Medium devices (landscape tablets, 768px and up)
+*****************************/
+
+/*****************************
+ Large devices (laptops/desktops, 992px and up)
+*****************************/
+
+/*****************************
+ Extra large devices (large laptops and desktops, 1200px and up)
 *****************************/
 
 @media only screen and (min-width: 600px) {
