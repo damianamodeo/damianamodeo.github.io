@@ -70,11 +70,14 @@ main {
 }
 
 .card-list {
-  display: flex;
+  /* display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: center; */
   padding: 0.4rem;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30ch, 1fr) );
 }
 
 .card {
@@ -82,6 +85,7 @@ main {
   margin-left: 0.4rem;
   flex: 1;
   min-width: 20ch;
+  /* max-width: 50ch; */
   padding: 2rem;
   background-color: var(--white);
 }
