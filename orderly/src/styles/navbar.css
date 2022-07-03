@@ -70,17 +70,74 @@
 }
 
 /*****************************
-  Extra small devices (phones, 600px and down)
-*****************************/
-
-/*****************************
   Small devices (portrait tablets and large phones, 600px and up)
 *****************************/
+
+@media only screen and (min-width: 600px) {
+  body {
+    margin-bottom: 5rem;
+    margin-left: 0rem;
+  }
+
+  header {
+    left: 0rem;
+  }
+
+  .navbar {
+    bottom: 0;
+    width: 100vw;
+    height: 5rem;
+  }
+
+  .navbar-nav {
+    display: flex;
+    align-items: baseline;
+  }
+
+  .nav-item {
+    justify-content: center;
+    width: 25%;
+  }
+
+  .nav-text {
+    display: none;
+  }
+}
 
 /*****************************
  Medium devices (landscape tablets, 768px and up)
 *****************************/
 
+@media only screen and (min-width: 768px) {
+  body {
+    margin-bottom: 5rem;
+    margin-left: 0rem;
+  }
+
+  header {
+    left: 0rem;
+  }
+
+  .navbar {
+    bottom: 0;
+    width: 100vw;
+    height: 5rem;
+  }
+
+  .navbar-nav {
+    display: flex;
+    align-items: baseline;
+  }
+
+  .nav-item {
+    justify-content: center;
+    width: 25%;
+  }
+
+  .nav-text {
+    display: none;
+  }
+}
 /*****************************
  Large devices (laptops/desktops, 992px and up)
 *****************************/

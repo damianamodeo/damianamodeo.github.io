@@ -18,9 +18,8 @@ const dashboard = function () {
 };
 
 const publishers = function () {
-  headerLeft.innerHTML = '<span class="material-symbols-sharp nav-icon"> arrow_back_ios </span>'
   title.innerText = "Publishers"
-  headerRight_1.innerHTML = '<span class="material-symbols-sharp nav-icon"> add </span>'
+  headerRight_1.innerHTML = '<i class="material-symbols-sharp nav-icon"> add </i>'
   
   headerRight_1.addEventListener("click", () => {
     addPublisher();
@@ -32,13 +31,13 @@ const publishers = function () {
   publisherList.className = "card-list"
   main.appendChild(publisherList);
   let i = 0;
-  db.publishers.orderBy("surname").each((pub) => {
+  db.publishers.orderBy("surname").each((publisher) => {
     let card = document.createElement("div");
     card.className = "card"
     card.addEventListener("click", () => {
-      publisherView(pub, pub.id);
+      publisherView(publisher);
     });
-    card.innerText = pub.surname + ", " + pub.firstname;
+    card.innerText = publisher.surname + ", " + publisher.firstname;
     publisherList.appendChild(card);
     i = i + 1;
   });

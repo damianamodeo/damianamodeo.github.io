@@ -65,17 +65,13 @@ header {
 
 
 main {
+  padding: 1.2rem;
   background-color: var(--grey1);
   height: 100vh;
 }
 
 .card-list {
-  /* display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center; */
   padding: 0.4rem;
-
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(30ch, 1fr) );
 }
@@ -85,22 +81,28 @@ main {
   margin-left: 0.4rem;
   flex: 1;
   min-width: 20ch;
-  /* max-width: 50ch; */
-  padding: 2rem;
+  padding-left: 2rem;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
   background-color: var(--white);
+  font-size: 2rem;
 }
 
 .card-details {
 }
 
-button {
-  color: var(--white);
-  background-color: var(--grey5);
+input {
   font-size: 1.6rem;
+}
+
+button {
+  /* color: var(--white); */
+  /* background-color: var(--grey5); */
+  /* font-size: 1.6rem; */
   margin: 1rem;
-  padding-left: 3rem;
-  padding-right: 3rem;
-  border-style: solid;
+  /* padding-left: 3rem; */
+  /* padding-right: 3rem; */
+  /* border-style: solid; */
 }
 
 /*****************************
