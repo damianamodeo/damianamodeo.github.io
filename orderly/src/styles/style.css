@@ -24,71 +24,10 @@ body {
   margin: 4rem 0rem 0rem 5rem;
 }
 
-header {
-  position: fixed;
-  top: 0;
-  left: 5rem;
-  right: 0;
-}
-
-.header-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 4rem;
-  background-color: var(--grey3);
-  padding-left: 2rem;
-  padding-right: 2rem;
-}
-
-.header-left {
-  flex: 1;
-  display: flex;
-}
-
-.title {
-  flex: 2;
-  text-align: center;
-}
-
-.header-right-container {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: right;
-}
-
-.header-right-1 {
-  display: flex;
-  text-align: right;
-}
-
-
 main {
   padding: 1.2rem;
   background-color: var(--grey1);
   height: 100vh;
-}
-
-.card-list {
-  padding: 0.4rem;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(30ch, 1fr) );
-}
-
-.card {
-  margin-top: 0.4rem;
-  margin-left: 0.4rem;
-  flex: 1;
-  min-width: 20ch;
-  padding-left: 2rem;
-  padding-top: 4rem;
-  padding-bottom: 4rem;
-  background-color: var(--white);
-  font-size: 2rem;
-}
-
-.card-details {
 }
 
 input {
@@ -113,23 +52,6 @@ button {
   body {
     /* font-size: 3rem; */
   }
-
-  .card-list {
-    display: flex;
-    flex-direction: column;
-    
-    width: 40ch;
-    padding: 0.4rem;
-  }
-
-  .card {
-    /* justify-items: center; */
-    margin-top: 0.4rem;
-    margin-left: 0.4rem;
-    padding: 2rem;
-    /* width: 40ch; */
-    background-color: var(--white);
-  }
 }
 
 /*****************************
@@ -137,9 +59,6 @@ button {
 *****************************/
 
 @media only screen and (min-width: 600px) {
-  body {
-    font-size: 1rem;
-  }
 }
 
 /*****************************
@@ -147,9 +66,6 @@ button {
 *****************************/
 
 @media only screen and (min-width: 768px) {
-  body {
-    font-size: 1.2rem;
-  }
 }
 
 /*****************************
@@ -157,9 +73,6 @@ button {
 *****************************/
 
 @media only screen and (min-width: 992px) {
-  body {
-    font-size: 1.4rem;
-  }
 }
 
 /*****************************
@@ -167,33 +80,7 @@ button {
 *****************************/
 
 @media only screen and (min-width: 1200px) {
-  body {
-    font-size: 1.6rem;
-  }
-}
-
-body {
-  font-size: 1.6rem;
-  line-height: 1.6;
-  /* padding: 1rem; */
-}
-
-input {
-  /* display: flex;
-    justify-content: center; */
-}
-
-ul {
-}
-
-img {
-  /* display: block;
-    width: 100%; */
 }
 
 @media (orientation: landscape) {
-  img {
-    /* height: 100%;
-      object-fit: cover; */
-  }
 }

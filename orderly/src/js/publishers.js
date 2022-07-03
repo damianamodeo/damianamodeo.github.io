@@ -1,76 +1,157 @@
 const addPublisher = function () {
-  main.innerHTML = "";
+  const backToPublishersViewIcon = document.createElement("div");
+  backToPublishersViewIcon.innerText = "Cancel";
+  headerLeftContainer.innerHTML = "";
+  headerLeftContainer.appendChild(backToPublishersViewIcon);
+  backToPublishersViewIcon.addEventListener("click", () => {
+    publishers();
+  });
 
-  const newPublisherForm = document.createElement("form");
-  const firstName = document.createElement("input");
-  const lastName = document.createElement("input");
-  const submitNewPublisher = document.createElement("button");
-  submitNewPublisher.innerText = 'Submit'
-  submitNewPublisher.addEventListener("click", () => {
+  title.innerText = "Add Publisher";
+
+  const submitNewPublisherIcon = document.createElement("div");
+  submitNewPublisherIcon.innerText = "Submit";
+  headerRightContainer.innerHTML = "";
+  headerRightContainer.appendChild(submitNewPublisherIcon);
+  submitNewPublisherIcon.addEventListener("click", () => {
     db.publishers.add({
       firstname: firstName.value,
       surname: lastName.value,
     });
     newPublisherForm.reset();
-  });
-  newPublisherForm.appendChild(firstName);
-  newPublisherForm.appendChild(lastName);
-  newPublisherForm.appendChild(submitNewPublisher);
-  main.appendChild(newPublisherForm);
-};
-
-const publisherView = function (publisher) {
-  headerLeft.innerHTML = '<i class="material-symbols-sharp nav-icon"> arrow_back_ios </i>'
-  title.innerText =  publisher.firstname + ' ' + publisher.surname
-  headerRight_1.innerHTML = '<div>Edit</div>'
-  
-  headerLeft.addEventListener("click", () => {
     publishers();
-  });
-  headerRight_1.addEventListener("click", () => {
-    // editPublisher();
   });
 
   main.innerHTML = "";
 
-  const firstName = document.createElement('div')
-  firstName.innerText = publisher.firstname
-  main.appendChild(firstName)
+  const newPublisherForm = document.createElement("form");
+  const firstName = document.createElement("input");
+  const lastName = document.createElement("input");
 
-  const middleName = document.createElement('div')
-  middleName.innerText = publisher.middlename
-  main.appendChild(middleName)
+  newPublisherForm.appendChild(firstName);
+  newPublisherForm.appendChild(lastName);
+  main.appendChild(newPublisherForm);
+};
 
-  const surname = document.createElement('div')
-  surname.innerText = publisher.surname
-  main.appendChild(surname)
+const publisherView = function (publisher) {
+  const backToPublishersIcon = document.createElement("div");
+  backToPublishersIcon.innerHTML =
+    '<span class="material-symbols-sharp nav-icon"> arrow_back_ios </span>';
+  headerLeftContainer.innerHTML = "";
+  headerLeftContainer.appendChild(backToPublishersIcon);
+  backToPublishersIcon.addEventListener("click", () => {
+    publishers();
+  });
 
-  const otherName = document.createElement('div')
-  otherName.innerText = publisher.othername
-  main.appendChild(otherName)
+  title.innerText = publisher.firstname + " " + publisher.surname;
 
-  const dateBirth = document.createElement('div')
-  dateBirth.innerText = publisher.datebirth
-  main.appendChild(dateBirth)
+  const editPublisherIcon = document.createElement("div");
+  editPublisherIcon.innerText = "Edit";
+  headerRightContainer.innerHTML = "";
+  headerRightContainer.appendChild(editPublisherIcon);
+  editPublisherIcon.addEventListener("click", () => {
+    editPublisher(publisher);
+  });
 
-  const dateBaptism = document.createElement('div')
-  dateBaptism.innerText = publisher.datebaptism
-  main.appendChild(dateBaptism)
+  main.innerHTML = "";
 
-  const phoneMobile = document.createElement('div')
-  phoneMobile.innerText = publisher.phonemobile
-  main.appendChild(phoneMobile)
+  const firstName = document.createElement("div");
+  firstName.innerText = publisher.firstname;
+  main.appendChild(firstName);
 
-  const phoneHome = document.createElement('div')
-  phoneHome.innerText = publisher.phonehome
-  main.appendChild(phoneHome)
+  const middleName = document.createElement("div");
+  middleName.innerText = publisher.middlename;
+  main.appendChild(middleName);
 
-  const emailPersonal = document.createElement('div')
-  emailPersonal.innerText = publisher.emailpersonal
-  main.appendChild(emailPersonal)
+  const surname = document.createElement("div");
+  surname.innerText = publisher.surname;
+  main.appendChild(surname);
 
-  const emailTheocratic = document.createElement('div')
-  emailTheocratic.innerText = publisher.emailtheocratic
-  main.appendChild(emailTheocratic)
+  const otherName = document.createElement("div");
+  otherName.innerText = publisher.othername;
+  main.appendChild(otherName);
 
-}
+  const dateBirth = document.createElement("div");
+  dateBirth.innerText = publisher.datebirth;
+  main.appendChild(dateBirth);
+
+  const dateBaptism = document.createElement("div");
+  dateBaptism.innerText = publisher.datebaptism;
+  main.appendChild(dateBaptism);
+
+  const phoneMobile = document.createElement("div");
+  phoneMobile.innerText = publisher.phonemobile;
+  main.appendChild(phoneMobile);
+
+  const phoneHome = document.createElement("div");
+  phoneHome.innerText = publisher.phonehome;
+  main.appendChild(phoneHome);
+
+  const emailPersonal = document.createElement("div");
+  emailPersonal.innerText = publisher.emailpersonal;
+  main.appendChild(emailPersonal);
+
+  const emailTheocratic = document.createElement("div");
+  emailTheocratic.innerText = publisher.emailtheocratic;
+  main.appendChild(emailTheocratic);
+};
+
+const editPublisher = function (publisher) {
+  const backToPublisherViewIcon = document.createElement("div");
+  backToPublisherViewIcon.innerText = "Cancel";
+  headerLeftContainer.innerHTML = "";
+  headerLeftContainer.appendChild(backToPublisherViewIcon);
+  backToPublisherViewIcon.addEventListener("click", () => {
+    publisherView(publisher);
+  });
+
+  title.innerText = "Edit Publisher";
+
+  const ammendPublisherIcon = document.createElement("div");
+  ammendPublisherIcon.innerText = "Done";
+  headerRightContainer.innerHTML = "";
+  headerRightContainer.appendChild(ammendPublisherIcon);
+
+  main.innerHTML = "";
+
+  const ammendPublisherForm = document.createElement("form");
+  const firstName = document.createElement("input");
+  const lastName = document.createElement("input");
+
+  firstName.value = publisher.firstname;
+  lastName.value = publisher.surname;
+
+  ammendPublisherForm.appendChild(firstName);
+  ammendPublisherForm.appendChild(lastName);
+  main.appendChild(ammendPublisherForm);
+
+  ammendPublisherIcon.addEventListener("click", () => {
+    db.publishers.update(publisher.id, {
+      firstname: firstName.value,
+      surname: lastName.value,
+    });
+    ammendPublisherForm.reset();
+    db.publishers
+      .where("id")
+      .equals(publisher.id)
+      .first(function (updatedPublisher) {
+        publisherView(updatedPublisher);
+      });
+  });
+};
+
+const updatePub = function (pub) {
+  db.publishers.put({
+    id: pub,
+    firstname: firstName.value,
+    middlename: middleName.value,
+    surname: lastName.value,
+    othername: otherName.value,
+    datebirth: dateBirth.value,
+    datebaptism: dateBaptism.value,
+    phonemobile: phoneMobile.value,
+    phonehome: phoneHome.value,
+    emailtheocratic: emailTheocratic.value,
+    emailpersonal: emailPersonal.value,
+  });
+};

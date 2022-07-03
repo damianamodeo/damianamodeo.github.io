@@ -44,10 +44,6 @@
     margin-left: 0rem;
   }
 
-  header {
-    left: 0rem;
-  }
-
   .navbar {
     bottom: 0;
     width: 100vw;
@@ -79,10 +75,6 @@
     margin-left: 0rem;
   }
 
-  header {
-    left: 0rem;
-  }
-
   .navbar {
     bottom: 0;
     width: 100vw;
@@ -112,10 +104,6 @@
   body {
     margin-bottom: 5rem;
     margin-left: 0rem;
-  }
-
-  header {
-    left: 0rem;
   }
 
   .navbar {

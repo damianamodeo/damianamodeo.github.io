@@ -1,7 +1,7 @@
 const dashboard = function () {
-  headerLeft.innerHTML = ''
+  headerLeftContainer.innerHTML = ''
   title.innerText = "Dashboard"
-  headerRight_1.innerHTML = ''
+  headerRightContainer.innerHTML = ''
 
 
   // header.innerText = "";
@@ -18,10 +18,13 @@ const dashboard = function () {
 };
 
 const publishers = function () {
+  headerLeftContainer.innerHTML = ''
   title.innerText = "Publishers"
-  headerRight_1.innerHTML = '<i class="material-symbols-sharp nav-icon"> add </i>'
-  
-  headerRight_1.addEventListener("click", () => {
+  const addPublisherIcon = document.createElement('i')
+  addPublisherIcon.innerHTML = '<i class="material-symbols-sharp nav-icon"> add </i>'
+  headerRightContainer.innerHTML = ''
+  headerRightContainer.appendChild(addPublisherIcon)
+  addPublisherIcon.addEventListener("click", () => {
     addPublisher();
   });
 

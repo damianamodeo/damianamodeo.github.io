@@ -146,21 +146,7 @@
 //   }
 // };
 
-// const updatePub = function (pub) {
-//   db.publishers.put({
-//     id: pub,
-//     firstname: firstName.value,
-//     middlename: middleName.value,
-//     surname: lastName.value,
-//     othername: otherName.value,
-//     datebirth: dateBirth.value,
-//     datebaptism: dateBaptism.value,
-//     phonemobile: phoneMobile.value,
-//     phonehome: phoneHome.value,
-//     emailtheocratic: emailTheocratic.value,
-//     emailpersonal: emailPersonal.value,
-//   });
-// };
+
 
 // const exportPublishers = function () {
 //   db.open()
@@ -256,8 +242,6 @@
 // emailPersonal.type = "email";
 // emailTheocratic.type = "email";
 
-
-
 var db = new Dexie("Congregation");
 db.version(5).stores({
   publishers:
@@ -267,11 +251,9 @@ db.version(5).stores({
 
 const header = document.querySelector('header')
 const headerContainer = document.querySelector('.header-container')
-const headerLeft = document.querySelector('.header-left')
+const headerLeftContainer = document.querySelector('.header-left-container')
 const title = document.querySelector('.title')
 const headerRightContainer = document.querySelector('.header-right-container')
-const headerRight_1 = document.querySelector('.header-right-1')
-
 const main = document.querySelector('main')
 
 const publisherList = document.createElement("div");
