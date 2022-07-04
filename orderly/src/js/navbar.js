@@ -7,7 +7,7 @@ const dashboard = function () {
   // header.innerText = "";
   // title.innerText = 'Dashboard';
   // header.appendChild(title);
-  // main.innerHTML = "";
+  main.innerHTML = "";
 
   // db.publishers.toCollection().count(function (count) {
   //   console.log(count + " friends in total");

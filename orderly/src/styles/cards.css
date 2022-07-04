@@ -4,14 +4,14 @@
   grid-template-columns: repeat(auto-fit, minmax(50ch, 1fr) );
 }
 
-.card {
+.card { 
   margin-top: 0.4rem;
   margin-left: 0.4rem;
   flex: 1;
   min-width: 20ch;
   padding-left: 2rem;
-  padding-top: 4rem;
-  padding-bottom: 4rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
   background-color: var(--white);
   font-size: 1.6rem;
 }

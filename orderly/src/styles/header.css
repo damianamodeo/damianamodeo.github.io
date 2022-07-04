@@ -1,10 +1,11 @@
 header {
   font-size: 1.8rem;
+  font-weight: 700;
   position: fixed;
   top: 0;
+  width: 100%;
   right: 0;
   background-color: var(--grey23);
-
   border-bottom: 1px solid;
   border-bottom-color: var(--grey21);
 }
@@ -23,7 +24,7 @@ header {
   display: flex;
 }
 
-.title {
+.title { 
   flex: 2;
   text-align: center;
 }

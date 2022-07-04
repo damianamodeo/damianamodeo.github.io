@@ -28,13 +28,14 @@ html {
 }
 
 body {
-  margin: 4rem 0rem 0rem 5rem;
+  margin-top: 4rem;
 }
 
 main {
   padding: 1.2rem;
   background-color: var(--grey24);
   height: 100vh;
+  /* margin-bottom: 5rem; */
 }
 
 input {
@@ -52,12 +53,13 @@ button {
 }
 
 /*****************************
-  Extra small devices (phones, 600px and down)
+  Extra small devices (phones, 10px and up)
 *****************************/
 
-*/ @media only screen and (max-width: 600px) {
+@media only screen and (min-width: 10px) {
   body {
-    /* font-size: 3rem; */
+    margin-left: 0;
+    margin-bottom: 5rem;
   }
 }
 
@@ -76,10 +78,15 @@ button {
 }
 
 /*****************************
- Large devices (laptops/desktops, 992px and up)
+ Large devices (laptops/desktops, 1025px and up)
 *****************************/
 
-@media only screen and (min-width: 992px) {
+@media only screen and (min-width: 1025px) {
+  
+  body {
+    margin-bottom: 0;
+    margin-left: 5rem;
+  }
 }
 
 /*****************************

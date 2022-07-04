@@ -59,41 +59,41 @@ const publisherView = function (publisher) {
   firstName.innerText = publisher.firstname;
   main.appendChild(firstName);
 
-  const middleName = document.createElement("div");
-  middleName.innerText = publisher.middlename;
-  main.appendChild(middleName);
+  // const middleName = document.createElement("div");
+  // middleName.innerText = publisher.middlename;
+  // main.appendChild(middleName);
 
   const surname = document.createElement("div");
   surname.innerText = publisher.surname;
   main.appendChild(surname);
 
-  const otherName = document.createElement("div");
-  otherName.innerText = publisher.othername;
-  main.appendChild(otherName);
+  // const otherName = document.createElement("div");
+  // otherName.innerText = publisher.othername;
+  // main.appendChild(otherName);
 
-  const dateBirth = document.createElement("div");
-  dateBirth.innerText = publisher.datebirth;
-  main.appendChild(dateBirth);
+  // const dateBirth = document.createElement("div");
+  // dateBirth.innerText = publisher.datebirth;
+  // main.appendChild(dateBirth);
 
-  const dateBaptism = document.createElement("div");
-  dateBaptism.innerText = publisher.datebaptism;
-  main.appendChild(dateBaptism);
+  // const dateBaptism = document.createElement("div");
+  // dateBaptism.innerText = publisher.datebaptism;
+  // main.appendChild(dateBaptism);
 
-  const phoneMobile = document.createElement("div");
-  phoneMobile.innerText = publisher.phonemobile;
-  main.appendChild(phoneMobile);
+  // const phoneMobile = document.createElement("div");
+  // phoneMobile.innerText = publisher.phonemobile;
+  // main.appendChild(phoneMobile);
 
-  const phoneHome = document.createElement("div");
-  phoneHome.innerText = publisher.phonehome;
-  main.appendChild(phoneHome);
+  // const phoneHome = document.createElement("div");
+  // phoneHome.innerText = publisher.phonehome;
+  // main.appendChild(phoneHome);
 
-  const emailPersonal = document.createElement("div");
-  emailPersonal.innerText = publisher.emailpersonal;
-  main.appendChild(emailPersonal);
+  // const emailPersonal = document.createElement("div");
+  // emailPersonal.innerText = publisher.emailpersonal;
+  // main.appendChild(emailPersonal);
 
-  const emailTheocratic = document.createElement("div");
-  emailTheocratic.innerText = publisher.emailtheocratic;
-  main.appendChild(emailTheocratic);
+  // const emailTheocratic = document.createElement("div");
+  // emailTheocratic.innerText = publisher.emailtheocratic;
+  // main.appendChild(emailTheocratic);
 };
 
 const editPublisher = function (publisher) {
