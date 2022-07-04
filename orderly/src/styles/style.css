@@ -4,11 +4,18 @@
   --blue1: rgb(74, 109, 167);
   --blue2: rgb(121, 160, 203);
   --white: rgb(255, 255, 255);
-  --grey1: rgb(241, 241, 241);
-  --grey2: rgb(218, 218, 218);
-  --grey3: rgb(197, 197, 197);
-  --grey4: rgb(157, 157, 157);
-  --grey5: rgb(98, 98, 98);
+  --grey24: rgb(240, 240, 240);
+  --grey23: rgb(230, 230, 230);
+  --grey22: rgb(220, 220, 220);
+  --grey21: rgb(210, 210, 210);
+  --grey20: rgb(200, 200, 200);
+  --grey19: rgb(190, 190, 190);
+  --grey18: rgb(180, 180, 180);
+  --grey17: rgb(170, 170, 170);
+  --grey16: rgb(160, 160, 160);
+  --grey15: rgb(150, 150, 150);
+  --grey14: rgb(140, 140, 140);
+  --grey13: rgb(130, 130, 130);
   --orange: rgb(196, 132, 48);
   --maroon: rgb(148, 40, 38);
 }
@@ -26,7 +33,7 @@ body {
 
 main {
   padding: 1.2rem;
-  background-color: var(--grey1);
+  background-color: var(--grey24);
   height: 100vh;
 }
 

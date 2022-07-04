@@ -2,9 +2,11 @@ header {
   font-size: 1.8rem;
   position: fixed;
   top: 0;
-  left: 5rem;
   right: 0;
-  background-color: var(--grey3);
+  background-color: var(--grey23);
+
+  border-bottom: 1px solid;
+  border-bottom-color: var(--grey21);
 }
 
 .header-container {
@@ -33,12 +35,14 @@ header {
   justify-content: right;
 }
 
-
 /*****************************
-  Extra small devices (phones, 600px and down)
+  Extra small devices (phones, 10px and up)
 *****************************/
 
-*/ @media only screen and (max-width: 600px) {
+@media only screen and (10-width: 10px) {
+  header {
+    left: 0;
+  }
 }
 
 /*****************************
@@ -56,10 +60,13 @@ header {
 }
 
 /*****************************
- Large devices (laptops/desktops, 992px and up)
+ Large devices (laptops/desktops, 1025px and up)
 *****************************/
 
-@media only screen and (min-width: 992px) {
+@media only screen and (min-width: 1025px) {
+  header {
+    left: 5rem;
+  }
 }
 
 /*****************************
