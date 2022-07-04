@@ -78,10 +78,10 @@ button {
 }
 
 /*****************************
- Large devices (laptops/desktops, 1025px and up)
+ Large devices (laptops/desktops, 1081px and up)
 *****************************/
 
-@media only screen and (min-width: 1025px) {
+@media only screen and (min-width: 1081px) {
   
   body {
     margin-bottom: 0;
@@ -90,10 +90,10 @@ button {
 }
 
 /*****************************
- Extra large devices (large laptops and desktops, 1200px and up)
+ Extra large devices (large laptops and desktops, 1921px and up)
 *****************************/
 
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1921px) {
 }
 
 @media (orientation: landscape) {

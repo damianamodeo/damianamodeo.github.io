@@ -1,5 +1,5 @@
 .navbar {
-  background-color: var(--grey23);
+  background-color: var(--grey22);
   position: fixed;
   left: 0;
 }
@@ -44,7 +44,7 @@
     width: 100vw;
     height: 5rem;
     border-top: 1px solid;
-    border-top-color: var(--grey21);
+    border-top-color: var(--grey20);
   }
 
   .navbar-container {
@@ -76,21 +76,16 @@
 }
 
 /*****************************
- Large devices (laptops/desktops, 1025px and up)
+ Large devices (laptops/desktops, 1081px and up)
 *****************************/
 
-@media only screen and (min-width: 1025px) {
+@media only screen and (min-width: 1081px) {
   .navbar {
     height: 100vh;
     width: 5rem;
     top: 0px;
-    transition: width 50ms ease;
     border-right: 1px solid;
-    border-right-color: var(--grey21);
-  }
-
-  .navbar:hover {
-    width: 14rem;
+    border-right-color: var(--grey20);
   }
 
   .navbar-container {
@@ -106,8 +101,23 @@
     margin-left: 1rem;
   }
 
+}
+
+/*****************************
+ Extra large devices (large laptops and desktops, 1921px and up)
+*****************************/
+
+@media only screen and (min-width: 1921px) {
+  .navbar {
+    transition: width 50ms ease;
+  }
+
+  .navbar:hover {
+    width: 14rem;
+  }
+  
   .nav-item:hover {
-    background-color: var(--grey3);
+    background-color: var(--grey20);
   }
 
   .navbar:hover .nav-text {
@@ -115,11 +125,4 @@
     font-size: 1.4rem;
     margin-left: 1rem;
   }
-}
-
-/*****************************
- Extra large devices (large laptops and desktops, 1200px and up)
-*****************************/
-
-@media only screen and (min-width: 1200px) {
 }
