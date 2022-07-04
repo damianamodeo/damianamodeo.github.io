@@ -28,14 +28,13 @@ html {
 }
 
 body {
-  margin-top: 4rem;
+  margin-top: 5rem;
 }
 
 main {
   padding: 1.2rem;
   background-color: var(--grey24);
-  height: 100vh;
-  /* margin-bottom: 5rem; */
+  /* height: 100vh; */
 }
 
 input {
@@ -43,13 +42,7 @@ input {
 }
 
 button {
-  /* color: var(--white); */
-  /* background-color: var(--grey5); */
-  /* font-size: 1.6rem; */
   margin: 1rem;
-  /* padding-left: 3rem; */
-  /* padding-right: 3rem; */
-  /* border-style: solid; */
 }
 
 /*****************************
@@ -58,8 +51,11 @@ button {
 
 @media only screen and (min-width: 10px) {
   body {
-    margin-left: 0;
-    margin-bottom: 5rem;
+    border-bottom: 5rem;
+  }
+
+  main{
+    padding-bottom: 10rem;
   }
 }
 
@@ -82,9 +78,7 @@ button {
 *****************************/
 
 @media only screen and (min-width: 1081px) {
-  
   body {
-    margin-bottom: 0;
     margin-left: 5rem;
   }
 }
@@ -94,6 +88,8 @@ button {
 *****************************/
 
 @media only screen and (min-width: 1921px) {
+  body {
+  }
 }
 
 @media (orientation: landscape) {
