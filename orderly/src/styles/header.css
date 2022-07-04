@@ -1,5 +1,5 @@
 header {
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   position: fixed;
   top: 0;
   right: 0;
@@ -25,6 +25,7 @@ header {
 .title { 
   flex: 2;
   text-align: center;
+  /* letter-spacing: .1rem; */
   font-weight: 800;
 }
 
