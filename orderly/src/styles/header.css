@@ -1,9 +1,7 @@
 header {
-  font-size: 1.8rem;
-  font-weight: 700;
+  font-size: 1.6rem;
   position: fixed;
   top: 0;
-  width: 100%;
   right: 0;
   background-color: var(--grey22);
   border-bottom: 1px solid;
@@ -27,6 +25,7 @@ header {
 .title { 
   flex: 2;
   text-align: center;
+  font-weight: 700;
 }
 
 .header-right-container {
@@ -43,6 +42,7 @@ header {
 @media only screen and (10-width: 10px) {
   header {
     left: 0;
+    right: 5rem;
   }
 }
 
