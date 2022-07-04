@@ -32,9 +32,9 @@ body {
 }
 
 main {
-  padding: 1.2rem;
+  padding: 1rem;
   background-color: var(--grey24);
-  /* height: 100vh; */
+  min-height: 100vh;
 }
 
 input {
@@ -54,8 +54,8 @@ button {
     border-bottom: 5rem;
   }
 
-  main{
-    padding-bottom: 10rem;
+  main {
+    padding-bottom: 15rem;
   }
 }
 
@@ -80,6 +80,11 @@ button {
 @media only screen and (min-width: 1081px) {
   body {
     margin-left: 5rem;
+    /* border-bottom: 0rem; */
+  }
+
+  main {
+    /* padding-bottom: 3rem; */
   }
 }
 
