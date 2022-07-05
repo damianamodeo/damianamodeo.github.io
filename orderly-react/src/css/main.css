@@ -1,0 +1,8 @@
+.main-container {
+  background-color: var(--blue2);
+  position: fixed;
+  left: 0;
+  top: var(--header-height);
+  right: 0rem;
+  bottom: var(--nav-height);
+}
